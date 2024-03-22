@@ -1,5 +1,5 @@
-#REDIS_HOST = 'red-cnua537109ks73fefs0g'
-REDIS_HOST = 'localhost'
+REDIS_HOST = 'red-cnua537109ks73fefs0g'
+#REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 
 AWS_ACCESS_KEY_ID = 'YCAJE9Z7kcFQJrHKuIBvOtRxY'
