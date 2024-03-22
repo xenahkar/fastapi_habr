@@ -1,0 +1,7 @@
+астраиваем веб-клиент Grafana
+Перейдем в браузер для настройки Grafana. Она находится по адресу http://127.0.0.1:3000/login. Для авторизации используйте логин и пароль, установленные ранее (в моем случае это просто admin/pass).
+Откройте меню-бутерброд в левом верхнем углу, нажмите Connections — Add new connection. В поисковой строке введите InfluxDB, выберите эту базу данных и на странице настройки вбейте следующие данные:
+Query language: InfluxQL (этот язык совместим с нашей версией InfluxDB)
+URL: http://influxdb:8086 (этот порт мы прописывали в docker-compose)
+Database: influxdb (значение INFLUXDB_DB из docker-compose)
+User: admin (значение INFLUXDB_ADMIN_USER)
