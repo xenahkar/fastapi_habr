@@ -1,4 +1,4 @@
-
+![image](https://github.com/xenahkar/fastapi_habr/assets/144525678/7976e8ea-2744-4f4d-b2e4-2fc4151a72a1)
 # Веб-сервис для предсказания хабов на Хабре
 
  В рамках домашнего задания по курсу "Прикладной Python" реализован веб-сервис с использованием фреймворка FastAPI, который развернут через docker.
@@ -20,7 +20,9 @@
 
 `/predict_texts_from_csv` - предсказание подходящих хабов для текстов из  csv-файла (в csv-файл добавляется новая колонка с предсказанием хаба для каждой статьи)
 
- <img width="1000" alt="fastapi-habr-img" src="https://github.com/xenahkar/habr_fastapi/assets/144525678/7c48ebd5-2f45-45af-be3f-fac348b8528e">
+<img width="1000" alt="fastapi-habr-img" src="https://github.com/xenahkar/fastapi_habr/assets/144525678/df570504-3192-4b61-9bf1-14e3e27602d6">
+
+
 
 ## Запуск
 
