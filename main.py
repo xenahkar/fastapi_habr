@@ -1,4 +1,3 @@
-import uvicorn
 import datetime
 import pandas as pd
 from pydantic import BaseModel
@@ -24,32 +23,20 @@ class ResponseText(BaseModel):
 app = FastAPI()
 
 
-@app.on_event("startup")
-async def startup_event():
-    """
-    Инициализация Redis.
-    """
-    redis = aioredis.from_url(
-        f"redis://{REDIS_HOST}:{REDIS_PORT}",
-        encoding="utf8",
-        decode_responses=True
-    )
-    FastAPICache.init(RedisBackend(redis), prefix="fastapi-cache")
-
-
 @app.get("/")
 @cache(expire=30)
 async def root():
     """
-    Приветственное сообщение на главной странице.
+    Приветственное сообщение
     """
     return "Welcome to hubs prediction service of Habr.ru"
 
 
 @app.get("/ping")
+@cache(expire=10)
 async def ping():
     """
-    Проверка доступности сервера
+    Проверка доступности сервиса
     """
     now = datetime.datetime.now()
     return f"Service is running. Reply from {now}"
@@ -92,5 +79,14 @@ async def predict_texts_from_file(csv_file: UploadFile):
     )
 
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
+@app.on_event("startup")
+async def startup_event():
+    """
+    Инициализация Redis.
+    """
+    redis = aioredis.from_url(
+        f"redis://{REDIS_HOST}:{REDIS_PORT}",
+        encoding="utf8",
+        decode_responses=True
+    )
+    FastAPICache.init(RedisBackend(redis), prefix="fastapi-cache")
