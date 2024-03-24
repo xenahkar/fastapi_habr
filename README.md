@@ -24,6 +24,12 @@
 
  <img width="1000" alt="fastapi-habr-img" src="https://github.com/xenahkar/habr_fastapi/assets/144525678/7c48ebd5-2f45-45af-be3f-fac348b8528e">
 
+## Запуск
+
+```
+docker-compose -f docker-compose.yml up
+```
+
 ## Видео-демонстрация работы сервиса
 
 
